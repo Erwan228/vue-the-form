@@ -16,7 +16,8 @@ form {
     max-width: 420px;
     margin: 30px auto;
     background: white;
-    text-align: 40px;
+    text-align: left;
+    padding: 40px;
     border-radius: 10px;
 }
 label {
