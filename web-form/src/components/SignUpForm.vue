@@ -1,5 +1,8 @@
 <template>
-
+    <form>
+        <label>Email:</label>
+        <input type="email" required>
+    </form>
 </template>
 
 <script>
