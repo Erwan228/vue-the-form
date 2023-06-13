@@ -12,30 +12,37 @@
             <option value="DPS" style="background: red;">DPS</option>
             <option value="Healer" style="background: green;">Healer</option>
         </select>
+
+        <label>Skills:</label>
+        <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
+        <div v-for="skill in skills" :key="skill" class="pill">
+            {{ skill }}
+        </div>
         
         <div class="terms">
             <input type="checkbox" required v-model="terms">
             <label>Accept terms and conditions</label>
         </div>
 
-        <div>
-            <input type="checkbox" v-model="names">
+        <!-- <div>
+            <input type="checkbox" value="Yoshi" v-model="names">
             <label>Yoshi</label>
         </div>
         <div>
-            <input type="checkbox" v-model="names">
+            <input type="checkbox" value="Rebekka" v-model="names">
             <label>Rebekka</label>
         </div>
         <div>
-            <input type="checkbox" v-model="names">
+            <input type="checkbox" value="e-Sindre" v-model="names">
             <label>e-Sindre</label>
-        </div>
+        </div> -->
 
     </form>
     <p>Email: {{ email }}</p>
     <p>Password: {{ password }}</p>
     <p>Role: {{ role }}</p>
     <p>Terms accepted: {{ terms }}</p>
+    <!-- <p>Names: {{ names }}</p> -->
 </template>
 
 <script>
@@ -46,7 +53,19 @@ export default {
         password: '',
         role: '',
         terms: false,
-        names: [],
+        // names: [],
+        tempSkill: '',
+        skills: [],
+    }
+},
+methods: {
+    addSkill(e){
+        if(e.key === ',' && this.tempSkill){
+            if(!this.skills.includes(this.tempSkill)){
+                this.skills.push(this.tempSkill)
+            }
+            this.tempSkill = ''
+        }
     }
 }
 }
@@ -85,5 +104,17 @@ input[type="checkbox"]{
     margin: 0 10px 0 0;
     position: relative;
     top: 2px;
+}
+.pill {
+    display: inline-block;
+    margin: 20px 10px 0 0;
+    padding: 6px 12px;
+    background: #eee;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
 }
 </style>
