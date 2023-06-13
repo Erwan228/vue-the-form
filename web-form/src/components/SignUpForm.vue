@@ -8,9 +8,9 @@
 
         <label>Role:</label>
         <select v-model="role">
-            <option value="Tank">Tank</option>
-            <option value="DPS">DPS</option>
-            <option value="Healer">Healer</option>
+            <option value="Tank" style="background: blue; color: whitesmoke">Tank</option>
+            <option value="DPS" style="background: red;">DPS</option>
+            <option value="Healer" style="background: green;">Healer</option>
         </select>
         
     </form>
