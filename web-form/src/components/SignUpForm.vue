@@ -7,7 +7,7 @@
         <input type="password" required v-model="password">
 
         <label>Role:</label>
-        <select v-model="role" value="">
+        <select v-model="role">
             <option value="Tank">Tank</option>
             <option value="DPS">DPS</option>
             <option value="Healer">Healer</option>
