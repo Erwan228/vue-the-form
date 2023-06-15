@@ -15,7 +15,7 @@
 
         <label>Skills:</label>
         <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
-        <div v-for="skill in skills" :key="skill" class="pill">
+        <div v-for="skill in skills" :key="skill" class="pill" @click="deleteSkill(this)">
             {{ skill }}
         </div>
         
@@ -66,6 +66,9 @@ methods: {
             }
             this.tempSkill = ''
         }
+    },
+    deleteSkill(skill){
+        this.skills.splice(skill)
     }
 }
 }
